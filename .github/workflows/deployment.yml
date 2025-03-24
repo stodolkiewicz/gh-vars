@@ -15,9 +15,10 @@ jobs:
           echo ${{ env.SOME_WORKFLOW_ENV }}
       - name: print repo variable
         run: | 
-          echo $REPO_VAR
           echo ${{ vars.REPO_VAR }}
-          echo ${{ env.REPO_VAR }}
+      - name: print repo secret
+        run: |
+          echo ${{ secrets.REPO_SECRET }}
       - name: Get code
         uses: actions/checkout@v4
       - name: install NodeJS
