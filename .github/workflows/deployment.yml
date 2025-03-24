@@ -3,10 +3,16 @@ on:
   push:
     branches:
       - main
+env:
+  SOME_WORKFLOW_ENV: jakis env
 jobs:
   test:
     runs-on: ubuntu-22.04
     steps:
+      - name: print workflow env
+        run: | 
+          echo $SOME_WORKFLOW_ENV
+          echo ${{ env.SOME_WORKFLOW_ENV }}
       - name: Get code
         uses: actions/checkout@v4
       - name: install NodeJS
