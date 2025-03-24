@@ -10,7 +10,11 @@ jobs:
     environment: dev
     runs-on: ubuntu-22.04
     steps:
-      - name: print dev environment env
+      - name: print dev environment secret
+        run: |
+          echo ${{ vars.ENV_SECRET_DEV }}
+          echo ${{ secret.ENV_SECRET_DEV }}
+      - name: print dev environment variable
         run: |
           echo ${{ vars.ENV_VAR_DEV }}
       - name: print workflow env
