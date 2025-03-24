@@ -13,7 +13,7 @@ jobs:
       - name: print dev environment secret
         run: |
           echo ${{ vars.ENV_SECRET_DEV }}
-          echo ${{ secret.ENV_SECRET_DEV }}
+          echo ${{ secrets.ENV_SECRET_DEV }}
       - name: print dev environment variable
         run: |
           echo ${{ vars.ENV_VAR_DEV }}
