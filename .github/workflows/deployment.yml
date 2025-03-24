@@ -18,6 +18,7 @@ jobs:
           echo ${{ vars.REPO_VAR }}
       - name: print repo secret
         run: |
+          echo ${{ secrets.REPO_SECRET_NOT_EXISTING }}
           echo ${{ secrets.REPO_SECRET }}
       - name: Get code
         uses: actions/checkout@v4
