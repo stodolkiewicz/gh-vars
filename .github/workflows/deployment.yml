@@ -7,8 +7,13 @@ env:
   SOME_WORKFLOW_ENV: jakis env
 jobs:
   test:
+    environment: dev
     runs-on: ubuntu-22.04
     steps:
+      - name: print dev environment env
+        run: |
+          echo $ENV_VAR_DEV
+          echo ${{ env.ENV_VAR_DEV }}
       - name: print workflow env
         run: | 
           echo $SOME_WORKFLOW_ENV
